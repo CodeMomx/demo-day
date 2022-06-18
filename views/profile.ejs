@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <title>Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<!-- <script src="https://js.stripe.com/v3/"></script> -->
+</head>
+<body>
+  <div class="container">
+    <ul id="notepad">
+      <li>CHORES LIST</li>
+      <% for(var i=0; i<messages.length; i++) {%>
+        <li>
+          <span style="display:none"><%= messages[i].name %></span>
+          <span><%= messages[i].msg %></span>
+          <span><%= messages[i].price %></span>
+          <span style="display:none"><%= messages[i].thumbUp %></span>
+          <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+          <span style="display:none"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+          <% if (user.local.role === "parent") { %>
+          <span><i class="fa fa-trash-o" aria-hidden="true"></i></span> <% } %>
+        </li>
+      <% } %>
+      <li>&nbsp;</li>
+    </ul>
+    <ul id="checklist">
+      <li>&nbsp;</li>
+      <li class="completed">
+        <% (user.local.role === 'parent') %>
+        YOUR COMPLETED CHORES</li>
+      <% for(var i=0; i<completedChores.length; i++) {%>
+        <% if(user.local.role === 'child') { %>
+      <li>
+        <input type="checkbox" checked="checked" id="checkbox3" />
+        <label for="checkbox3">Your parent (<%=completedChores[i].parent%>) owes you $<%=  completedChores[i].allowance %> for <%= completedChores[i].chore %></label>
+      </li>
+      <%}%>
+        <% if(user.local.role === 'parent') { %>
+          <li>
+            <input type="checkbox" checked="checked" id="checkbox3" />
+            <label for="checkbox3">  <%= completedChores[i].chore %></label>
+          </li>
+      <%}%>
+      <li class="allowance"> total due: $<%= totalAllowance %></li>
+      <li>&nbsp;</li>
+    </ul>
+    <%}%>
+  </div>
+  <% if(user.local.role === 'parent') { %>
+  <div class="parentForm">   
+    <form action="/messages" method="POST">
+    <input type="text" style="display:none" value="<%= user.local.email %>" name="name">
+    <input type="text" placeholder="message" name="msg">
+    <input type="number" placeholder="price" name="price">
+    <button class="button" type="submit">Submit</button>
+ </form>
+</div>
+<%}%>
+
+    <div>
+      <form id="payment-form" action="/create-payment-intent" method="post">
+        <div id="payment-element">
+          <!--Stripe.js injects the Payment Element-->
+        </div>
+        <button type="submit">
+          <div class="spinner hidden" id="spinner"></div>
+          <span id="button-text">Pay now</span>
+        </button>
+        <div id="payment-message" class="hidden"></div>
+      </form>
+    </div>
+
+<script src="main.js"></script>
+</body>
+</html>

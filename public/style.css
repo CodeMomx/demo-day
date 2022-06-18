@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Unkempt:400,700);
+
+body {
+  background: #deb778;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#notepad {
+  width: 50%;
+  background: #fff;
+  border-left: 20px solid #d4a464;
+  max-width: 450px;
+  min-width: 400px;
+  margin-top: 11em;
+}
+
+#notepad li {
+  list-style-type: none;
+  padding: 10px 20px;
+  border-bottom: 4px solid #e9edf0;
+  font-size: 25px;
+  font-family: "Unkempt", cursive;
+
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  white-space: normal;
+
+  -webkit-transition: all 0.12s ease-in-out;
+  -moz-transition: all 0.12s ease-in-out;
+  -o-transition: all 0.12s ease-in-out;
+  transition: all 0.12s ease-in-out;
+}
+
+#notepad li:hover,
+#checklist li:hover {
+  background: #f4f4f4;
+  padding-left: 28px;
+}
+
+#notepad li:first-child {
+  background: #7798dd;
+  color: #ffffff;
+  text-align: center;
+  font-family: arial;
+  font-weight: bold;
+  border: none;
+}
+
+#notepad li:last-child {
+  border-bottom: 30px solid #e9edf0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label:before {
+  content: url(https://i.imgur.com/xlJQa8x.png);
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked + label:before {
+  content: url(https://i.imgur.com/7B711FG.png);
+}
+
+#checklist {
+  width: 50%;
+  background: #fff;
+  border-left: 5px solid #d4a464;
+  max-width: 450px;
+  min-width: 400px;
+}
+
+#checklist li {
+  padding: 0 0 10px 20px;
+  list-style-type: none;
+  font-family: "Unkempt", cursive;
+  font-size: 35px;
+
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  white-space: normal;
+
+  -webkit-transition: all 0.12s ease-in-out;
+  -moz-transition: all 0.12s ease-in-out;
+  -o-transition: all 0.12s ease-in-out;
+  transition: all 0.12s ease-in-out;
+}
+
+#checklist li:first-child:after {
+  content: "";
+  background: #deb778;
+  float: right;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid #e0e5e1;
+}
+
+.allowance {
+  font-weight: 900;
+  color: red;
+  margin: 20px;
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  height: 100vh;
+}
+
+#checklist .completed {
+  font-family: arial;
+  font-weight: 900;
+  font-size: 25px;
+  padding: 15px;
+  text-decoration: underline;
+}
