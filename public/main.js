@@ -1,8 +1,8 @@
-const thumbUp = document.getElementsByClassName("fa-thumbs-up");
+const check = document.getElementsByClassName("fa-check");
 const trash = document.getElementsByClassName("fa-trash-o");
 const thumbDown = document.getElementsByClassName("fa-thumbs-down");
 
-Array.from(thumbUp).forEach(function(element) {
+Array.from(check).forEach(function(element) {
       element.addEventListener('click', function(){
         const name = this.parentNode.parentNode.childNodes[1].innerText
         const msg = this.parentNode.parentNode.childNodes[3].innerText
@@ -17,11 +17,20 @@ Array.from(thumbUp).forEach(function(element) {
             'price': price
           })
         })
+        fetch('completed', {
+          method: 'delete',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            'name': name,
+            'msg': msg,
+            'price': price
+          })
+        })
        
-        // .then(data => {
-        //   console.log(data)
-          // window.location.reload(true)
-        // })
+        .then(data => {
+          console.log(data)
+          window.location.reload(true)
+        })
       });
 });
 

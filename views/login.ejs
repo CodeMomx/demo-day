@@ -8,38 +8,22 @@
         <title>Modern Business - Start Bootstrap Template</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
+        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+        
         <link href="styles.css" rel="stylesheet" />
         <link href="edits.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-green">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="/">Start Bootstrap</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            
+                  
                             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                    <li><a class="dropdown-item" href="#">Blog Home</a></li>
-                                    <li><a class="dropdown-item" href="#">Blog Post</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                    <li><a class="dropdown-item" href="#">Portfolio Overview</a></li>
-                                    <li><a class="dropdown-item" href="#">Portfolio Item</a></li>
+                            
                                 </ul>
                             </li>
                         </ul>
@@ -48,11 +32,9 @@
             </nav>
             <!-- Page content-->
             <section class="py-5">
-                <div class="container px-5">
+               
                     <!-- Contact form-->
-                    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
-                        <div class="text-center mb-5">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-person-fill"></i></div>
+                   
                             <p class="lead fw-normal text-muted mb-0">Already have an account?</p>
                             <h1 class="fw-bolder">Log In</h1>
                         </div>
@@ -62,16 +44,16 @@
                                 <div class="alert alert-danger"><%= message %></div>
                                 <% } %>
                                 <form action="/login" method="post">
-
+                                    <label for="email">Email address</label>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" type="text" placeholder="name@example.com" name="email"/>
-                                        <label for="email">Email address</label>
+                                       
                                         
                                     </div>
-
+                                    <label for="password">Password</label>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" type="password" placeholder="*******" name="password"/>
-                                        <label for="password">Password</label>
+                                       
                                         
                                     </div>
                                     
@@ -87,40 +69,10 @@
                             <div class="h5 mb-2">Need an account?</div>
                             <p class="text-muted mb-0">Sign up for an account <a href="/signup">here</a></p>
                         </div>
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-question-circle"></i></div>
-                            <div class="h5">Want to learn more?</div>
-                            <p class="text-muted mb-0">Explore our community forums and communicate with other users.</p>
-                        </div>
-                        <!--<div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-question-circle"></i></div>
-                            <div class="h5">Support center</div>
-                            <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>
-                        </div>
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
-                            <div class="h5">Call us</div>
-                            <p class="text-muted mb-0">Call us during normal business hours at (555) 892-9403.</p>
-                        </div>-->
-                    </div> 
-                </div>
+                 
             </section>
         </main>
-        <!-- Footer-->
-        <footer class="bg-green py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+ 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="main.js"></script>
        

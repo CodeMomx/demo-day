@@ -1,0 +1,17 @@
+body {
+  background-color: #DDB77C;
+  text-align: center;
+  font-family: 'Coiny', cursive;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+.form-control {
+  width: 365px;
+  height: 45px;
+  border-radius: 10%;
+  border-color: white;
+}
